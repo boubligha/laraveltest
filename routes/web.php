@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 //pass data static inside the routes 
 Route::get('/', function () {
     return view('welcome', [
-        'name' => 'James',
+        'name' => 'amine',
         'cours'=>[
             'Laravel',
             'PHP',

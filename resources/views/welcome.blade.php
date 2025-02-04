@@ -42,5 +42,29 @@
             @endforeach
         </table>
     @endunless
+
+    <!-- isset check if a variable already exist and have a value deferent than null-->
+    @isset($name)
+        <p>la variable name existe</p>
+    @endisset
+    <!-- empty check if a variable is empty -->
+    @empty($cours)
+        <p>le tableau cours est vide</p>
+    @endempty
+    @switch($name)
+        @case('amine')
+            <p>le nom est amine</p>
+            @break
+        @case('mohamed')
+            <p>le nom est mohamed</p>
+            @break
+        @default
+            <p>le nom est {{$name}}</p>
+    @endswitch
+    <!-- on utilise @ php instead of <?php ?> !-->
+    @php
+        $n=10+5;
+    @endphp
+    <p>le resultat est {{$n}}</p>
 </body>
 </html>
