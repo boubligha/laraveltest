@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    {{-- Navigation --}}
+    @include('partials.nav')
     <h1>welcome {{$name}}</h1>
     <ul>
         @foreach($cours as $value)

@@ -1,7 +1,7 @@
 <nav>
-    <a href="#">Accueil</a>
-    <a href="#">Mon profil</a>
-    <a href="#">Mes informations</a>
+    <a href="/">Accueil</a>
+    <a href="/profile">Mon profil</a>
+    <a href="/settings">Mes informations</a>
 </nav>
 {{-- execute the code only one time--}}
 @once

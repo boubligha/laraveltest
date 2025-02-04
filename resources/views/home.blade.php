@@ -6,8 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    {{-- Navigation --}}
-    @include('partials.nav')
     <h1>welcome to ur home</h1>
     <h2>Mr  {{$nom}}</h2>
 </body>
