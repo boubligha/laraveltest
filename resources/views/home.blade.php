@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>welcome to ur home</h1>
-    <h2>Mr  {{$nom}}</h2>
-</body>
-</html>
+@extends('layouts.master')
+@section('title')
+ Home
+@endsection
+@section('main')
+<h1>welcome to ur home</h1>
+
+//passing data to a component using props
+<x-users-table :users="$users"/>
+@endsection
+
+
