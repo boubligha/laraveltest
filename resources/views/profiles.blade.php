@@ -15,5 +15,7 @@
                 <td>{{ Str::limit($profile->bio)}}</td>
             </tr>
         @endforeach
+        {{$profiles->links()}}
     </table>
+
 </x-master>

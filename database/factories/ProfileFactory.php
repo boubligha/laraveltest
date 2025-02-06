@@ -20,7 +20,7 @@ class ProfileFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'password' => $this->faker->text('bdcjbsc123hjbhqxvhjxvxhxsjbqs'),
+            'password' => bcrypt($this->faker->password),
             'bio' => $this->faker->text(),
         ];
     }
