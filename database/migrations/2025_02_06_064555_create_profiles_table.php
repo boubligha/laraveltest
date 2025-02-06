@@ -10,6 +10,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->string( 'name',50);
             $table->string('email',70)->unique();
             $table->string('password',60);
-            $table->string('bio',);
+            $table->string('bio');
             $table->timestamps();
         });
     }

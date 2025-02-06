@@ -7,13 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{route('home')}}">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('profiles.index')}}">tous les profiles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/profile">profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/settings">settings</a>
+            <a class="nav-link" href="{{route('settings.index')}}">settings</a>
           </li>
     </div>
   </nav>

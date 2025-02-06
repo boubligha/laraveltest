@@ -14,6 +14,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/home',[ 'App\Http\Controllers\HomeController','index' ]);
-Route::get('/profile',[ 'App\Http\Controllers\ProfileController','index' ]);
-Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ]);
+Route::get('/home',[ 'App\Http\Controllers\HomeController','index' ])->name('home');
+Route::get('/profiles',[ 'App\Http\Controllers\ProfileController','index' ])->name('profiles.index');
+Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ])->name('settings.index');
