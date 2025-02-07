@@ -21,4 +21,8 @@ Route::get('/profiles',[ 'App\Http\Controllers\ProfileController','index' ])->na
 Route::get('/profiles/{id}',[ 'App\Http\Controllers\ProfileController','show' ])
 ->where('id','\d+')
 ->name('profiles.show');
+
+Route::get('/profiles/create',[ 'App\Http\Controllers\ProfileController','create' ])
+->name('create');
+
 Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ])->name('settings.index');

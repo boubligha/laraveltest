@@ -30,4 +30,8 @@ class ProfileController extends Controller
         //$profie=Profile::findOrFail($id);
         return view("profile.show",compact('profie'));
     }
+
+    public function create(){
+        return view('profile.create');
+    }
 }
