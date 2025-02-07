@@ -14,6 +14,9 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('settings.index')}}">settings</a>
-          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('create')}}">Ajouter profile</a>
+      </li>
     </div>
   </nav>

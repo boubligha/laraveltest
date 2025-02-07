@@ -1,21 +1,27 @@
-<x-master title="create Profile">
-    <form method="POST">
+<x-master title="Create Profile">
+    <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
+        @csrf <!-- Protection CSRF -->
+
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
+
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
+
         <div class="mb-3">
-            <label for="password" class="form-label">mot de pass </label>
-            <input type="passwd" class="form-control" id="password" name="password">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="password" name="password" required>
         </div>
+
         <div class="mb-3">
-            <label for="bio" class="form-label">bio</label>
-            <input type="text" class="form-control" id="bio" name="bio">
+            <label for="bio" class="form-label">Bio</label>
+            <textarea class="form-control" id="bio" name="bio" rows="3"></textarea>
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </x-master>
