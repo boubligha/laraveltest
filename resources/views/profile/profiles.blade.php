@@ -6,6 +6,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Bio</th>
+            <th>action</th>
         </tr>
         @foreach ($profiles as $profile)
             <tr>
@@ -13,6 +14,8 @@
                 <td>{{$profile->name}}</td>
                 <td>{{$profile->email}}</td>
                 <td>{{ Str::limit($profile->bio)}}</td>
+                <td><a class="btn btn-primary" href="{{ route('profiles.show', ['id' => $profile->id]) }}">afficher plus</a>
+                </td>
             </tr>
         @endforeach
         {{$profiles->links()}}

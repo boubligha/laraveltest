@@ -18,6 +18,7 @@ Route::get('/home',[ 'App\Http\Controllers\HomeController','index' ])->name('hom
 Route::get('/profiles',[ 'App\Http\Controllers\ProfileController','index' ])->name('profiles.index');
 //ProfileController::class
 //envoyer des parametres dans la route avec condition
-Route::get('/profiles/{id}',[ 'App\Http\Controllers\ProfileController','show' ])->name('profiles.show')
-->where('id','\d+');
+Route::get('/profiles/{id}',[ 'App\Http\Controllers\ProfileController','show' ])
+->where('id','\d+')
+->name('profiles.show');
 Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ])->name('settings.index');
