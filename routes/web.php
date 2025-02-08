@@ -19,12 +19,15 @@ Route::get('/home',[ ProfileController::class,'index' ])->name('home');
 Route::get('/profiles',[ 'App\Http\Controllers\ProfileController','index' ])->name('profiles.index');
 //
 //envoyer des parametres dans la route avec condition
-Route::get('/profiles/{id}',[ 'App\Http\Controllers\ProfileController','show' ])
-->where('id','\d+')
-->name('profiles.show');
+
+
 
 Route::get('/profiles/create',[ 'App\Http\Controllers\ProfileController','create' ])
 ->name('create');
+
+Route::get('/profiles/{profile:id}',[ 'App\Http\Controllers\ProfileController','show' ])
+->where('profile','\d+')
+->name('profiles.show');
 
 Route::post('/profiles/store',[ 'App\Http\Controllers\ProfileController','store' ])
 ->name('store');

@@ -13,11 +13,9 @@ class ProfileController extends Controller
         $profiles = Profile::paginate(perPage: 2);
         return view("profile.profiles", compact('profiles'));
     }
-
-    public function show($id)
+    //RouteModuleBinding vous passer l'id dans route et laravel comprend que vous voulez recupere le profile de base de donnée
+    public function show(Profile $profile)
     {
-        // Récupérer un profil ou renvoyer une erreur 404
-        $profile = Profile::findOrFail($id);
         return view("profile.show", compact('profile'));
     }
 
@@ -32,7 +30,8 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|string|max:50',
             'email' => 'required|email|unique:profiles,email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
+            //verifier confirmation password  required|min:6|confirmed     //2 eme input :password_confirmation
             'bio' => 'required|string',
         ]);
         // Création du profil
@@ -44,5 +43,7 @@ class ProfileController extends Controller
         ]);
         // Redirection avec un message de succès
         return redirect()->route('profiles.index')->with('success', 'Profil créé avec succès !');
+        //redirection avec passage de data
+        //return redirect()->route('profiles.index',['id']=>$id )->with('success', 'Profil créé avec succès !')->with('data', $request->all());
     }
 }
