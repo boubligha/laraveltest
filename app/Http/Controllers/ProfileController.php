@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileRequest;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class ProfileController extends Controller
         return view('profile.create');
     }
 
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         // Validation des données
         $request->validate([
@@ -45,5 +46,17 @@ class ProfileController extends Controller
         return redirect()->route('profiles.index')->with('success', 'Profil créé avec succès !');
         //redirection avec passage de data
         //return redirect()->route('profiles.index',['id']=>$id )->with('success', 'Profil créé avec succès !')->with('data', $request->all());
+    }*/
+
+    public function store(ProfileRequest $request)
+    {
+        $formFields = $request->validated();
+        $formFields['password'] = bcrypt($formFields['password']);
+        // Création du profil
+        Profile::create($formFields);
+        // Redirection avec un message de succès
+        return redirect()->route('profiles.index')->with('success', 'Profil créé avec succès !');
+        //redirection avec passage de data
+        //return redirect()->route('profiles.index',['id']=>$id )->with('success', 'Profil créé avec succès !')->with('data', $request->all());
     }
-}
+} 
