@@ -10,6 +10,9 @@
           <a class="nav-link" href="{{route('home')}}">Accueil <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{route('login.show')}}">se conecter</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{route('profiles.index')}}">tous les profiles</a>
         </li>
         <li class="nav-item">
@@ -20,3 +23,12 @@
       </li>
     </div>
   </nav>
+
+
+
+
+
+
+
+
+

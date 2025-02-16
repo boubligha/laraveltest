@@ -32,4 +32,10 @@ Route::get('/profiles/{profile:id}',[ 'App\Http\Controllers\ProfileController','
 Route::post('/profiles/store',[ 'App\Http\Controllers\ProfileController','store' ])
 ->name('store');
 
+Route::get('/login',[ 'App\Http\Controllers\LoginController','show' ])
+->name('login.show');
+
+Route::post('/login',[ 'App\Http\Controllers\LoginController','login' ])
+->name('login.login');
+
 Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ])->name('settings.index');

@@ -22,6 +22,7 @@
             <label for="password" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="password" name="password" required value="{{old('password')}}">
         </div>
+
         <div class="mb-3">
             <label for="password_confirmation" class="form-label">confirmation Mot de passe</label>
             <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required value="{{old('password_confirmation')}}">
