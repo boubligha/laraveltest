@@ -35,6 +35,9 @@ Route::post('/profiles/store',[ 'App\Http\Controllers\ProfileController','store'
 
 Route::get('/login',[ LoginController::class,'show' ])
 ->name('login.show');
+//pour supprimer un profile
+Route::delete('/profiles/{profile:id}',[ ProfileController::class,'destroy' ])
+->name('profiles.destroy');
 
 Route::post('/login',[ LoginController::class,'login' ])
 ->name('login.login');
