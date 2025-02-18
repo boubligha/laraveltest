@@ -24,7 +24,7 @@ class ProfileRequest extends FormRequest {
     {
         return [
             'name' => 'required|string|max:50',
-            'email' => 'required|email|unique:profiles,email',
+            'email' => 'required|email',//unique:profiles,email
             'password' => 'required|min:6|confirmed',
             'bio' => 'required|string',
         ];

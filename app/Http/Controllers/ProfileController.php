@@ -37,4 +37,16 @@ class ProfileController extends Controller
         $profile->delete();
         return redirect()->route('home')->with('success','profile supprimé avec succès');
     }
+
+    public function edit(Profile $profile)
+    {
+        return view('profile.edit', compact('profile'));
+    }
+
+    public function update(ProfileRequest $request, Profile $profile)
+    {
+        $formFields = $request->validated();
+        $profile->fill($formFields)->save();
+        return redirect()->route('profiles.show', $profile->id)->with('success','le profile à bien été modefier');
+    }
 }

@@ -8,9 +8,14 @@
         </div>
         <div class="card-footer border-top px-3 py-3 bg-light" style="z-index: 9;">
             <form method="post" action="{{ route('profiles.destroy', $profile->id) }}">
-                @method('DELETE')
                 @csrf
+                @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-primary">edit</a>
+            <form method="get" action="{{ route('profiles.edit', $profile->id) }}">
+                @csrf
+                <button type="submit" class="btn btn-primary">modefier</button>
             </form>
         </div>
     </div>

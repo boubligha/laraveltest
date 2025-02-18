@@ -43,5 +43,8 @@ Route::post('/login',[ LoginController::class,'login' ])
 ->name('login.login');
 Route::get ('/logout',[ LoginController::class,'logout' ])
 ->name('login.logout');
-
+Route::get('/profiles/{profile}/edit',[ ProfileController::class,'edit' ])
+->name('profiles.edit');
+Route::put('/profiles/{profile}',[ ProfileController::class,'update' ])
+->name('profiles.update');
 Route::get('/settings',[ 'App\Http\Controllers\InformationsController','index' ])->name('settings.index');
