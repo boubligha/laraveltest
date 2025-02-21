@@ -29,6 +29,9 @@ class ProfileController extends Controller
     public function store(ProfileRequest $request)
     {
         $formFields = $request->validated();
+        //recuperer file name
+        $formFields['image']=$request->file('image')->store('profile','public');
+        //storeAs('profile', 'profile1','public');
         $formFields['password'] = Hash::make($formFields['password']);
         Profile::create($formFields);
         return redirect()->route('profiles.index')->with('success', 'Profil créé avec succès !');
