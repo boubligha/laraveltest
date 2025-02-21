@@ -32,6 +32,10 @@
             <label for="bio" class="form-label">Bio</label>
             <textarea class="form-control" id="bio" name="bio" rows="3" >{{old('bio')}}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">image</label>
+            <input type="file" class="form-control" id="image" name="image" />
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
