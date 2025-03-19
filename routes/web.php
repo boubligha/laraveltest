@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome', [
         'name' => 'amine',
         'cours'=>[
@@ -14,7 +14,7 @@ Route::get('/', function () {
             'JavaScript'
         ],
     ]);
-});
+});*/
 
 Route::get('/home',[ ProfileController::class,'index' ])->name('home');
 Route::get('/profiles',[ 'App\Http\Controllers\ProfileController','index' ])->name('profiles.index');

@@ -30,4 +30,14 @@ class ProfileRequest extends FormRequest {
             'image'=> 'required|image|mimes:jpeg,png,jpg,svg|max:2048',//value en kilobite
         ];
     }
+/*  public function messages()
+    {
+        return [
+        'name.required' => 'Le champ Nom est requis.',
+        'age.min' => 'L\'âge doit être supérieur à 0.',
+        'email.email' => 'Veuillez entrer une adresse 
+        email valide.',
+        ];
+    }
+*/
 }
