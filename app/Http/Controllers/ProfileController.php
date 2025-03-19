@@ -52,4 +52,20 @@ class ProfileController extends Controller
         $profile->fill($formFields)->save();
         return redirect()->route('profiles.show', $profile->id)->with('success','le profile à bien été modefier');
     }
+    /*
+    public function sendContactEmail(Request $request)
+    {
+        // Récupérer les données du formulaire
+        $data = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'message' => 'required|string',
+        ]);
+
+        // Envoyer l'email
+        Mail::to('administrateur@chezmoi.com')->send(new ContactEmail($data));
+
+        // Rediriger vers une page de confirmation
+        return view('confirm');
+    }*/
 }
